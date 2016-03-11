@@ -13,7 +13,7 @@
 	<title>Writing - PostgREST</title>
 
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
-        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
         <link rel="stylesheet" href="../../css/highlight.css">
 
@@ -371,7 +371,7 @@ similar way to our <code>POST</code> example.</p>
 
     <p>It's advisable to create a separate trigger for <code>UPDATE</code> and <code>INSERT</code>
     avoiding conditionals that decide which is the trigger current operation.
-    This makes it easier to change code for (or even disable) one operation without intefering with others while
+    This makes it easier to change code for (or even disable) one operation without interfering with others while
     improving readability.
     </p>
 </div>
@@ -401,7 +401,7 @@ basic field replacements, and not at all "incorrect."</p>
 <li>❌ Cannot be cached or prefetched</li>
 <li>✅ Idempotent</li>
 </ul>
-<p>Simply use the <code>DELETE</code> verb. All recors that match your filter
+<p>Simply use the <code>DELETE</code> verb. All records that match your filter
 will be removed. For instance deleting inactive users:</p>
 <pre><code class="HTTP">DELETE /user?active=is.false
 </code></pre>

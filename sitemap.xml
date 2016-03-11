@@ -4,7 +4,7 @@
     
     <url>
      <loc>http://postgrest.com/</loc>
-     <lastmod>2016-02-02</lastmod>
+     <lastmod>2016-03-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -13,13 +13,13 @@
         
     <url>
      <loc>http://postgrest.com/install/server/</loc>
-     <lastmod>2016-02-02</lastmod>
+     <lastmod>2016-03-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://postgrest.com/install/ecosystem/</loc>
-     <lastmod>2016-02-02</lastmod>
+     <lastmod>2016-03-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -29,13 +29,13 @@
         
     <url>
      <loc>http://postgrest.com/api/reading/</loc>
-     <lastmod>2016-02-02</lastmod>
+     <lastmod>2016-03-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://postgrest.com/api/writing/</loc>
-     <lastmod>2016-02-02</lastmod>
+     <lastmod>2016-03-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -45,31 +45,31 @@
         
     <url>
      <loc>http://postgrest.com/admin/security/</loc>
-     <lastmod>2016-02-02</lastmod>
+     <lastmod>2016-03-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://postgrest.com/admin/versioning/</loc>
-     <lastmod>2016-02-02</lastmod>
+     <lastmod>2016-03-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://postgrest.com/admin/migration/</loc>
-     <lastmod>2016-02-02</lastmod>
+     <lastmod>2016-03-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://postgrest.com/admin/deployment/</loc>
-     <lastmod>2016-02-02</lastmod>
+     <lastmod>2016-03-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://postgrest.com/admin/performance/</loc>
-     <lastmod>2016-02-02</lastmod>
+     <lastmod>2016-03-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -79,31 +79,31 @@
         
     <url>
      <loc>http://postgrest.com/examples/start/</loc>
-     <lastmod>2016-02-02</lastmod>
+     <lastmod>2016-03-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://postgrest.com/examples/users/</loc>
-     <lastmod>2016-02-02</lastmod>
+     <lastmod>2016-03-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://postgrest.com/examples/blog/</loc>
-     <lastmod>2016-02-02</lastmod>
+     <lastmod>2016-03-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://postgrest.com/examples/external_auth/</loc>
-     <lastmod>2016-02-02</lastmod>
+     <lastmod>2016-03-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://postgrest.com/examples/python-requests-jwt/</loc>
-     <lastmod>2016-02-02</lastmod>
+     <lastmod>2016-03-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
         

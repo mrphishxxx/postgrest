@@ -13,7 +13,7 @@
 	<title>User Management - PostgREST</title>
 
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
-        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
         <link rel="stylesheet" href="../../css/highlight.css">
 
@@ -251,11 +251,11 @@ a username and password system on top of JWT using only plpgsql.</p>
 <p>Future examples such as the multi-tenant blogging platform will use
 the results from this example for their auth. We will build a system
 for users to sign up, log in, manage their accounts, and for admins
-to manange other people's accounts. We will also see how to trigger
+to manage other people's accounts. We will also see how to trigger
 outside events like sending password reset emails.</p>
 <p>Before jumping into the code, a little more about how the tokens
 work. Every JWT contains cryptographically signed <em>claims</em>. PostgREST
-cares specificaly about a claim called <code>role</code>. When a client includes
+cares specifically about a claim called <code>role</code>. When a client includes
 a <code>role</code> claim PostgREST executes their request using that database
 role.</p>
 <p>How would a client include a role claim, or claims in general?
@@ -472,7 +472,7 @@ basic_auth.send_validation() returns trigger
 declare
   tok uuid;
 begin
-  select uuid_generate_v4() into tok;
+  select gen_random_uuid() into tok;
   insert into basic_auth.tokens (token, token_type, email)
          values (tok, 'validation', new.email);
   perform pg_notify('validate',
@@ -512,7 +512,7 @@ where actual.role = member_of.rolname;
   -- is equal to email so that user can only see themselves
 </code></pre>
 
-<p>Using this view clients can see themeslves and any other users with
+<p>Using this view clients can see themselves and any other users with
 the right db roles. This view does not yet support inserts or updates
 because not all the columns refer directly to underlying columns.
 Nor do we want it to be auto-updatable because it would allow an escalation
