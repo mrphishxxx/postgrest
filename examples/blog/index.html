@@ -296,21 +296,52 @@ grant usage, select on sequence posts_id_seq, comments_id_seq to author;
 we'll use <a href="http://www.postgresql.org/docs/9.5/static/ddl-rowsecurity.html">row-level
 security</a>.
 Note that it requires PostgreSQL 9.5 or later.</p>
-<pre><code class="sql">ALTER TABLE posts ENABLE ROW LEVEL SECURITY;
-drop policy if exists authors_eigenedit on posts;
-create policy authors_eigenedit on posts
-  using (true)
+<pre><code class="sql">grant select on posts, comments to anon;
+
+ALTER TABLE posts ENABLE ROW LEVEL SECURITY;
+ALTER TABLE comments ENABLE ROW LEVEL SECURITY;
+
+drop policy if exists posts_select_unsecure on posts;
+create policy posts_select_unsecure on posts for select
+  using (true);
+
+drop policy if exists comments_select_unsecure on comments;
+create policy comments_select_unsecure on comments for select
+  using (true);
+
+drop policy if exists authors_eigencreate on posts;
+create policy authors_eigencreate on posts for insert
   with check (
     author = basic_auth.current_email()
   );
 
-ALTER TABLE comments ENABLE ROW LEVEL SECURITY;
-drop policy if exists authors_eigenedit on comments;
-create policy authors_eigenedit on comments
-  using (true)
+drop policy if exists authors_eigencreate on comments;
+create policy authors_eigencreate on comments for insert
+  with check (
+      author = basic_auth.current_email()
+  );
+
+drop policy if exists authors_eigenedit on posts;
+create policy authors_eigenedit on posts for update
+  using (author = basic_auth.current_email())
   with check (
     author = basic_auth.current_email()
   );
+
+drop policy if exists authors_eigenedit on comments;
+create policy authors_eigenedit on comments for update
+  using (author = basic_auth.current_email())
+  with check (
+    author = basic_auth.current_email()
+  );
+
+drop policy if exists authors_eigendelete on posts;
+create policy authors_eigendelete on posts for delete
+  using (author = basic_auth.current_email());
+
+drop policy if exists authors_eigendelete on comments;
+create policy authors_eigendelete on comments for delete
+  using (author = basic_auth.current_email());
 </code></pre>
 
 <p>Finally we need to modify the <code>users</code> view from the previous example.

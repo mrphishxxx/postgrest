@@ -448,7 +448,7 @@ begin
    where token_type = 'reset'
      and tokens.email = reset_password.email;
 
-  select uuid_generate_v4() into tok;
+  select gen_random_uuid() into tok;
   insert into basic_auth.tokens (token, token_type, email)
          values (tok, 'reset', reset_password.email);
   perform pg_notify('reset',
@@ -653,15 +653,16 @@ one user from another in SQL by examining the JWT claims which
 PostgREST makes available in the SQL variable <code>postgrest.claims</code>.
 Here's a function to get the email of the currently authenticated
 user.</p>
-<pre><code class="sql">create or replace function
+<pre><code class="sql">-- Prevent current_setting('postgrest.claims.email') from raising
+-- an exception if the setting is not present. Default it to ''.
+ALTER DATABASE your_db_name SET postgrest.claims.email TO '';
+
+create or replace function
 basic_auth.current_email() returns text
   language plpgsql
   as $$
 begin
   return current_setting('postgrest.claims.email');
-exception
-  -- handle unrecognized configuration parameter error
-  when undefined_object then return '';
 end;
 $$;
 </code></pre>
