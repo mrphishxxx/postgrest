@@ -34,6 +34,7 @@ executable postgrest
                      , containers
                      , contravariant
                      , errors
+                     , ghc-events-analyze == 0.2.5
                      , hasql >= 0.19.9 && < 0.20
                      , hasql-pool >= 0.4 && < 0.5
                      , hasql-transaction >= 0.4.3 && < 0.5
@@ -90,6 +91,7 @@ library
                      , containers
                      , contravariant
                      , errors
+                     , ghc-events-analyze
                      , hasql
                      , hasql-transaction
                      , hasql-pool

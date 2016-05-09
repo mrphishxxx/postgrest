@@ -5,11 +5,16 @@ extra-deps:
   - hasql-0.19.9
   - hasql-pool-0.4
   - hasql-transaction-0.4.3
+  - OneTuple-0.2.1
   - packdeps-0.4.2.1
   - postgresql-error-codes-1
   - postgresql-binary-0.8.1
+  - SVGFonts-1.5.0.0
+  - tuple-0.3.0.2
 ghc-options:
   postgrest: -O2 -Werror -Wall -fwarn-monomorphism-restriction -fwarn-missing-exported-sigs -fwarn-identities
 
 packages:
-- '.'
+- location: .
+- location: https://github.com/begriffs/ghc-events-analyze/archive/53a68fb8c993b79b9cbce4dba108ae5b84092d79.zip
+  extra-dep: true
